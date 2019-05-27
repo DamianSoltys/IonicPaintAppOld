@@ -1,0 +1,26 @@
+<ion-content class="content">
+    <div class="top-toolbar">
+        <ion-button *ngFor="let colour of availableColours" (click)="changeColour(colour)">
+            <ion-icon [style.color]="colour" name="square"></ion-icon>
+        </ion-button>
+
+
+        <ion-button icon-only (click)="changeColour('#fff')">
+            <ion-icon style="color: #fff;" name="square"></ion-icon>
+        </ion-button>
+
+    </div>
+    <canvas #myCanvas (touchstart)="handleStart($event)" (touchmove)="handleMove($event)"></canvas>
+    <div class="bottom-toolbar">
+
+        <ion-button color="dark" (click)="clearCanvas()">
+            <ion-icon name="trash"></ion-icon>
+        </ion-button>
+
+        <ion-button color="dark" (click)="changeSize(5)">5</ion-button>
+        <ion-button color="dark" (click)="changeSize(10)">10</ion-button>
+        <ion-button color="dark" (click)="changeSize(20)">20</ion-button>
+        <ion-button color="dark" (click)="changeSize(50)">50</ion-button>
+        <ion-button color="dark" (click)="changeSize(200)">200</ion-button>
+    </div>
+</ion-content>
